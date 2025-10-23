@@ -8,6 +8,8 @@ var list = new List<RationalNumber>
     new RationalNumber(15,25),
     new RationalNumber(17,23),
     new RationalNumber(12,15),
+    new RationalNumber(10,15),
+    new RationalNumber(12,20),
 };
 
 var threefifths = new RationalNumber(3, 5);

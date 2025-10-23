@@ -41,11 +41,13 @@ namespace Fractional
         }
          public bool Equals(RationalNumber? other)
         {
-            if(other == null)
+            if (other == null)
             {
                 return false;
-            } else
-            return (DForm == other.DForm);
+            }
+            else
+                // return (DForm == other.DForm);
+                return (numerator == other.numerator && denominator == other.denominator);
         }
 
      public int CompareTo(RationalNumber? other)
@@ -60,7 +62,7 @@ namespace Fractional
             } else if(DForm == other.DForm)
             {
                 return 0;
-            } else if (DForm < other.DForm)
+            } else 
             {
                 return -1;
             }
