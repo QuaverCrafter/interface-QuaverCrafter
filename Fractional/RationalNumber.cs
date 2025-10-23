@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Fractional
 {
-    public class RationalNumber
+    public class RationalNumber:IEquatable<RationalNumber>,IComparable<RationalNumber>
     {
         int numerator;
         int denominator;
+        public decimal DForm => numerator / denominator;
 
         public RationalNumber(int num, int denom)
         {
@@ -38,5 +39,31 @@ namespace Fractional
                 return GreatestCommonDenominator(b, a % b);
             }
         }
+         public bool Equals(RationalNumber? other)
+        {
+            if(other == null)
+            {
+                return false;
+            } else
+            return (DForm == other.DForm);
+        }
+
+     public int CompareTo(RationalNumber? other)
+        {
+            if(other == null  )
+            {
+                return 1;
+            }
+            if (DForm > other.DForm)
+            {
+                return 1;
+            } else if(DForm == other.DForm)
+            {
+                return 0;
+            } else if (DForm < other.DForm)
+            {
+                return -1;
+            }
+         }
     }
 }
